@@ -1,11 +1,13 @@
 import React from 'react';
 import Header from "./components/header";
-
-
+import Nav_link from "./components/navlink";
 
 function App() {
     return (
-        <Header/>
+        <div>
+            <Header />
+            <Nav_link />
+        </div>
     );
 }
 
