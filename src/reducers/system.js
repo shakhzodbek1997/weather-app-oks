@@ -1,4 +1,4 @@
-import * as Constants from 'constants/system';
+import * as Constants from '../constants/system';
 import * as moment from "moment";
 
 const initialState = {

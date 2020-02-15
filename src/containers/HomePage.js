@@ -1,29 +1,30 @@
 import React, {Component, Fragment} from 'react';
 import {bindActionCreators} from "redux";
-import {connect} from "react-redux";
-import {getCurrentWeather, changeCity, getOtherDays} from "action/system";
+import {connect} from 'react-redux';
+import {getCurrentWeather, changeCity, getOtherDays} from "../actions/system";
 import Header from "../components/header";
-import Nav_link from "../components/navlink";
-import CurrentItem from "components/currentItem";
+import NavLink from "../components/navlink";
+import CurrentItem from "../components/currentItem";
 
 class HomePage extends Component {
 
-    static path ='/';
+    static path = '/';
 
-    componentDidMount() {
-        const {getCurrentWeather, cityId, getOtherDays} = this.props;
+    componentDidMount(){
+        const { getCurrentWeather, cityId, getOtherDays } = this.props;
         getCurrentWeather(cityId);
         getOtherDays();
     }
+
     componentDidUpdate(prevProps){
-        const {getCurrentWeather, cityId} = this.props;
-        if (cityId !== prevProps.cityId){
+        const { getCurrentWeather, cityId } = this.props;
+        if(cityId !== prevProps.cityId){
             getCurrentWeather(cityId);
         }
     }
 
     render() {
-        const { currentDayInfo, isLoading, changeCity, cityId, otherDaysInfo} = this.props;
+        const { currentDayInfo, isLoading, changeCity, cityId, otherDaysInfo } = this.props;
 
         const cities = [
             {
@@ -73,11 +74,13 @@ class HomePage extends Component {
                 id: 1512569,
                 title: 'Tashkent'
             }
-            ];
+        ];
+
         return (
+
             <Fragment>
                 <Header/>
-                <Nav_link cities={cities} changeCity={changeCity} active={cityId}/>
+                <NavLink cities={cities} changeCity={changeCity} active={cityId}/>
                 <div className="main-container">
                     <CurrentItem currentDayInfo={currentDayInfo} isLoading={isLoading} otherDaysInfo={otherDaysInfo}/>
                 </div>
@@ -87,9 +90,18 @@ class HomePage extends Component {
 }
 
 const mapStateToProps = (state) => ({
-   currentDayInfo:  state.system,
+    currentDayInfo: state.system,
     isLoading: state.system.all.isLoading,
     cityId: state.system.activeCityId,
 });
 
-export default HomePage;
+const mapDispatchToProps = (dispatch) => bindActionCreators(
+    {
+        getCurrentWeather,
+        changeCity,
+        getOtherDays
+    },
+    dispatch
+);
+
+export default connect(mapStateToProps,mapDispatchToProps)(HomePage);

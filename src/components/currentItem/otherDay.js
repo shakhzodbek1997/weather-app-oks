@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import * as moment from "moment";
-import { weather } from 'services';
-import Loading from 'components/preloader'
+import { weather } from '../../services';
+import Loading from '../../components/preloader'
 class OtherDay extends Component {
     render() {
 

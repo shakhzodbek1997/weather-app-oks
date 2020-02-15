@@ -1,14 +1,13 @@
-import React from 'react';
-import Header from "./components/header";
-import Nav_link from "./components/navlink";
+import React, {Component, Fragment} from 'react';
 
-function App() {
-    return (
-        <div>
-            <Header />
-            <Nav_link />
-        </div>
-    );
+class App extends Component {
+    render() {
+        return (
+            <Fragment>
+                {this.props.children}
+            </Fragment>
+        );
+    }
 }
 
 export default App;

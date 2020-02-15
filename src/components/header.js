@@ -1,19 +1,19 @@
-import React, {Component} from "react";
-import Logo from '../assets/images/logo.png';
-import '../assets/styles/main.scss';
+import React, {Component} from 'react';
+import Logo from '../assets/images/logo.png'
 
-class Header extends Component{
+class Header extends Component {
     render() {
-        return(
+        return (
             <header>
                 <div className="main-container">
-                    <div className="site-logo">
-                        <img src={Logo} alt="logo"/>
-                        <span>Weather SPA</span>
+                    <div className='site-logo'>
+                        <img src={Logo} alt=""/>
+                        <span>WEATHER SPA</span>
                     </div>
                 </div>
             </header>
         );
     }
 }
+
 export default Header;
