@@ -45,7 +45,8 @@ class OtherDay extends Component {
                     <div className='other-day-item' key={items.dt}>
                         <div className="wrap">
                             <span className='weather-day'>{moment.unix(items.dt).format('dddd')}</span>
-                            <div className={`weather-icon-small weather-icon-${weather.name(items.weather[0].id)}`}></div>
+                            <div className={`weather-icon-small weather-icon-${weather.name(items.weather[0].id)}`}>
+                            </div>
                             <span className='temp'>{items.main.temp > 0 ? '+' : ''}{items.main.temp.toFixed(0)}</span>
                             <span>{items.weather[0].main}</span>
                         </div>

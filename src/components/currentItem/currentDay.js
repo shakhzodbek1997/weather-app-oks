@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import { weather } from '../../services';
 import moment from 'moment';
 import Loader from "../preloader";
-
 class CurrentDay extends Component {
     render() {
         const {item, isLoading} = this.props;
@@ -24,7 +23,9 @@ class CurrentDay extends Component {
                     <div className="center-block">
                         <span className='city-name'>{item.name}</span>
                         <span className='last-update'>{moment.unix(item.dt).format('MMMM Do YYYY')}</span>
-                        <div className={`weather-icon weather-icon-${weather.name(item.weather[0].id)}`}></div>
+                        <div className={`weather-icon weather-icon-${weather.name(item.weather[0].id)}`}>
+
+                        </div>
                         <div className='weather-title'>
                             <span>{item.weather[0].main}</span>
                             <span>{item.weather[0].description}</span>
