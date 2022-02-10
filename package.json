@@ -10,7 +10,7 @@
     "i18next-xhr-backend": "^1.5.1",
     "lodash": "^4.17.15",
     "moment": "^2.22.2",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "normalizr": "^3.3.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
@@ -49,7 +49,7 @@
     "cross-env": "^5.2.0",
     "enzyme": "^3.7.0",
     "enzyme-adapter-react-16": "^1.6.0",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "prop-types": "^15.6.2"
   }
 }
